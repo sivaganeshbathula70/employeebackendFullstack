@@ -19,5 +19,6 @@ public class employee {
     private int EmpuId;
     private String name;
     private String age;
+    private String salary;
 
 }
