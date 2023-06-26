@@ -17,6 +17,8 @@ public class employeeservice {
     @Autowired
     employeerepo employeeRepository;
 
+    public employeeservice(employeerepo employeerep) {
+    }
 
 
     public List<employee> display() {
@@ -45,13 +47,10 @@ public class employeeservice {
     public void deleteEmployee(int EmpuId) {
         employeeRepository.deleteById(EmpuId);
     }
-
     public employee updateEmployees(employee emp) {
         employee eu = employeeRepository.findById(emp.getEmpuId()).orElse(null);
         eu.setName(emp.getName());
         eu.setAge(emp.getAge());
         return employeeRepository.save(eu);
     }
-
-
 }
